@@ -1,17 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div @click="openToast">点击弹出Toast center</div>
+    <div @click="openToast2">点击弹出Toast top</div>
+    <div @click="openToast3">点击弹出Toast bottom</div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  methods: {
+    openToast() {
+      this.$crazyToast.open({
+        loading: true,
+        title: 'ToastcenterToastToastcenterToastToastcenterToastToastcenterToastToastcenterToast'
+      })
+    },
+    openToast2() {
+      this.$crazyToast.open({
+        position: 'top',
+        title: 'Toast top'
+      })
+    },
+    openToast3() {
+      this.$crazyToast.open({
+        position: 'bottom',
+        title: 'Toast bottom'
+      })
+    }
   }
 }
 </script>
